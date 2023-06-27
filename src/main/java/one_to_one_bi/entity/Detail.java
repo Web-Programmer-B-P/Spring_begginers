@@ -1,21 +1,23 @@
-package one_to_one_uni.entity;
+package one_to_one_bi.entity;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "details")
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "employee")
 public class Detail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +29,9 @@ public class Detail {
     private String phoneNumber;
     @Column(name = "email")
     private String email;
+
+    @OneToOne(mappedBy = "detail", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+    private Employee employee;
 
     public Detail() {
     }

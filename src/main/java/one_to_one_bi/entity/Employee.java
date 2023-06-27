@@ -1,4 +1,4 @@
-package one_to_one_uni.entity;
+package one_to_one_bi.entity;
 
 
 import lombok.Getter;
@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "employees_one_to_one_uni")
-@ToString
+@ToString(exclude = "detail")
 @Getter
 @Setter
 public class Employee {

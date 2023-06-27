@@ -1,7 +1,7 @@
 package one_to_one_uni;
 
-import one_to_one_uni.entity.Detail;
-import one_to_one_uni.entity.Employee;
+import one_to_one_bi.entity.Detail;
+import one_to_one_bi.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
