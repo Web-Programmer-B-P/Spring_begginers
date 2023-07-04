@@ -1,8 +1,7 @@
 package spring_introduction;
 
-import org.springframework.stereotype.Component;
-
 //@Component("cat")
+@Profiling
 public class Cat implements Pet {
 
     public Cat() {
@@ -11,6 +10,11 @@ public class Cat implements Pet {
 
     @Override
     public void say() {
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("May may");
     }
 }

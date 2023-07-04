@@ -7,8 +7,10 @@ public class Person {
     private Pet pet;
     @Value("${person.name}")
     private String name;
-    @Value("${person.age}")
+
+    @RandomIntegerValue(min = 10000, max = 20000)
     private int age;
+
 
 //    @Autowired
 //    public Person(@Qualifier(value = "cat") Pet pet) {
