@@ -24,16 +24,20 @@ public class Test1 {
 //            Department department = new Department("IT", 300, 1200);
 //            Employee emp1 = new Employee("Petr", "Bars", 350000);
 //            Employee emp2 = new Employee("Vasa", "Insxd", 50000);
+//            Employee emp3 = new Employee("Alex", "Simon", 20000);
 //            department.addEmployeeToDepartment(emp1);
 //            department.addEmployeeToDepartment(emp2);
+//            department.addEmployeeToDepartment(emp3);
 //
 //            session.save(department);
 
 
-//            Department department = session.get(Department.class, 1);
-//
-//            System.out.println(department);
-//            System.out.println(department.getEmployees());
+            System.out.println("Get Department==============================");
+            Department department = session.get(Department.class, 7);
+
+            System.out.println("Show Department..............................");
+            System.out.println(department);
+
 
 //            Employee employee = session.get(Employee.class, 1);
 //            System.out.println(employee);
@@ -43,7 +47,11 @@ public class Test1 {
 //
 //            session.delete(employee);
 
+            department.getEmployees().get(0);
             session.getTransaction().commit();
+
+            System.out.println("Show Employees of the Department..............................");
+            System.out.println(department.getEmployees());
         }
     }
 }

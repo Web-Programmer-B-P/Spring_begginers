@@ -7,6 +7,7 @@ import lombok.ToString;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,8 +34,10 @@ public class Department {
     private int minSalary;
 
     @OneToMany(
-            cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH},
-            mappedBy = "department"
+            cascade = CascadeType.ALL,
+            mappedBy = "department",
+            fetch = FetchType.LAZY
+//            fetch = FetchType.EAGER
     )
     @ToString.Exclude
     private List<Employee> employees;
