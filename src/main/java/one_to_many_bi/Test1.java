@@ -39,9 +39,9 @@ public class Test1 {
 //            System.out.println(employee);
 //            System.out.println(employee.getDepartment());
 
-            Employee employee = session.get(Employee.class, 3);
-
-            session.delete(employee);
+//            Employee employee = session.get(Employee.class, 3);
+//
+//            session.delete(employee);
 
             session.getTransaction().commit();
         }
